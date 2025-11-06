@@ -1,4 +1,5 @@
 import React from 'react'
+import MobileNav from './MobileNav'
 
 const Header = () => {
   return (
@@ -31,14 +32,9 @@ const Header = () => {
             <span>Get for Windows</span>
           </a>
         </div>
-        <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-_R_6b5ulb_" data-state="closed" data-slot="drawer-trigger" className="relative ml-4 flex size-6 text-foreground outline-hidden md:hidden">
-          <span className="absolute -inset-3 lg:hidden">
-          </span>
-          <svg className="-mr-1.5 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <title>Trigger</title>
-            <path d="M3.99902 7.71436H19.999" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path><path d="M3.99902 16.2856H19.999" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-          </svg>
-          <span className="sr-only">Open menu</span></button></div>
+
+        <MobileNav />
+      </div>
     </header>
   )
 }

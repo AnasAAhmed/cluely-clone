@@ -35,27 +35,26 @@ const faqs = [
 
 const Faqs = () => {
     return (
-        <section className="mx-4 sm:mx-12 md:mx-24 lg:mx-36">
+        <section className="mx-4 sm:mx-12 md:mx-24 lg:mx-36 mt-36 mb-24">
             <h2 className="text-28 leading-tight font-medium tracking-4 text-foreground md:text-4xl md:text-32 lg:mb-4 lg:text-40 xl:mb-6">Frequently asked questions</h2>
             <Accordion
                 type="single"
-                collapsible
-                
                 className="w-full"
+                collapsible
                 defaultValue="item-1"
             >
                 {faqs.map((i, _) => (
-                    <AccordionItem key={_} value={i.que}>
+                    <AccordionItem key={_} value={'item-' + i.que}>
                         <AccordionTrigger className="text-18 leading-snug font-medium tracking-4 text-pretty md:text-xl md:text-20 md:leading-[1.125] lg:text-24">{i.que}</AccordionTrigger>
                         <AccordionContent className="flex flex-col gap-4 text-balance">
-                            <div className="relative z-10 -mt-[4px] flex flex-col gap-y-5 pt-0 pr-8 pb-0 text-base leading-snug tracking-2 text-gray-30 md:-mt-[4px] md:max-w-[616px] md:pt-0 md:pr-0 md:pb-0 md:text-18 lg:mt-0 lg:pb-[2px] lg:text-lg lg:text-20 xl:pb-[4px]">
-                                
-                            <p dangerouslySetInnerHTML={{ __html:i.ans }} />
+                            <div className="relative z-10 -mt-1 flex flex-col gap-y-5 pt-0 pr-8 pb-0 text-base leading-snug tracking-2 text-gray-30 md:-mt-1 md:max-w-[616px] md:pt-0 md:pr-0 md:pb-0 md:text-18 lg:mt-0 lg:pb-0.5 lg:text-lg lg:text-20 xl:pb-1">
+
+                                <p dangerouslySetInnerHTML={{ __html: i.ans }} />
                             </div>
                         </AccordionContent>
                     </AccordionItem>
                 ))}
-               
+
             </Accordion>
         </section>
     )

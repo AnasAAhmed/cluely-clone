@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @import "tw-animate-css"; */
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,10 +44,58 @@
 }
 
 .purple-gradient-button {
-    background: radial-gradient(114.65% 114.65% at 9.73% 17.27%, #1e82e0 0, #1c38ea 100%);
-    transition: transform .16s 
-ease-out;
-    box-shadow: 0 62px 17px #0c39ed00, 0 40px 16px #0c39ed08, 0 22px 13px #0c39ed17, 0 10px 10px #0c39ed26, 0 2px 5px #0c39ed2b, 20px 20px 24px #94acf366, inset -3px -3px 4px #bfe5fb66, inset 4px 4px 4px #131ae41a;
+  background: radial-gradient(114.65% 114.65% at 9.73% 17.27%, #1e82e0 0, #1c38ea 100%);
+  transition: transform .16s ease-out;
+  box-shadow: 0 62px 17px #0c39ed00, 0 40px 16px #0c39ed08, 0 22px 13px #0c39ed17, 0 10px 10px #0c39ed26, 0 2px 5px #0c39ed2b, 20px 20px 24px #94acf366, inset -3px -3px 4px #bfe5fb66, inset 4px 4px 4px #131ae41a;
+}
+
+/* @media (max-width: 768px) {
+  .hero-v2 {
+    background-image: radial-gradient(187.39% 86.87% at 50% 13.13%, #4a8fdd 23.39%, #4a8fdd00 100%);
+  }
+} */
+
+.black-gradient-button {
+  -webkit-backdrop-filter: blur(.5px);
+  backdrop-filter: blur(.5px);
+  background: 0 0;
+  position: relative;
+  box-shadow: inset -1px -1px 4px #000000a6, 5px 7px 7px #7785a46e, inset -.5px -.5px 1px #ffffff59, 1px 1px 3px #0003;
+}
+
+.black-gradient-button {
+  -webkit-backdrop-filter: blur(.5px);
+  backdrop-filter: blur(.5px);
+  background: 0 0;
+  position: relative;
+  box-shadow: inset -1px -1px 4px #000000a6, 5px 7px 7px #7785a46e, inset -.5px -.5px 1px #ffffff59, 1px 1px 3px #0003
+}
+
+.black-gradient-button:before {
+  content: "";
+  z-index: -1;
+  filter: blur(.3px);
+  background: radial-gradient(85.96% 85.96% at 9.73% 17.27%, #434343cc 15.38%, #000 100%);
+  border-radius: 8px;
+  position: absolute;
+  inset: -.5px
+}
+
+.inner-black-button-gradient {
+  background: 0 0;
+  border-radius: 6px;
+  box-shadow: inset 4px 4px 4px #1c1d22, inset -3px -3px 4px #464853, 20px 20px 24px #85868b66
+}
+
+.inner-black-button-gradient:before {
+  content: "";
+  z-index: -1;
+  background-blend-mode: overlay;
+  filter: blur(.3px);
+  background: radial-gradient(85.96% 85.96% at 9.73% 17.27%, #464853 0, #1c1d22 100%), radial-gradient(29.9% 135.23% at 83.67% 104.55%, #ffffff1a 0, #fff0 100%);
+  border-radius: 6px;
+  position: absolute;
+  inset: 0
 }
 
 :root {
@@ -123,6 +171,7 @@ ease-out;
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

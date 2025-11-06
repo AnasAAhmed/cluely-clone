@@ -4,10 +4,17 @@ import { Laptop } from "lucide-react";
 
 export default function HeroSection() {
     return (
-        <div className="hero-v2 flex flex-col items-center gap-8 lg:gap-16 bg-[url('/images/background@4x.png')] bg-top bg-no-repeat [background-size:max(100vw,100rem)]">
+        <div className="hero-v2 max-md:bg-[radial-gradient(187.39%_86.87%_at_50%_13.13%,#4a8fdd_23.39%,#4a8fdd00_100%)] px-px flex flex-col items-center gap-8 lg:gap-16">
 
-            {/* Header Section */}
-            <div className="relative w-full">
+            <Image
+                src="/images/background@4x.png"
+                alt="Hero Background"
+                fill
+                className="object-top max-md:hidden object-cover z-0"
+                priority
+            />
+
+            <div className="relative z-10 w-full">
                 <section className="flex h-full items-start justify-center pt-20 lg:pt-20">
                     <div className="flex flex-col items-center gap-8">
                         {/* Title + Subtitle */}
@@ -17,7 +24,7 @@ export default function HeroSection() {
                                     className="text-center text-[56px] leading-[102%] font-medium tracking-[-1px] text-white lg:text-[80px]"
                                     style={{ fontFamily: "'EB Garamond', 'EB Garamond Fallback'" }}
                                 >
-                                    <span className="block h-[57px] overflow-hidden lg:h-[76px]">
+                                    <span className="block px-2 h-[n57px] overflow-hidden lg:mh-[76px]">
                                         <span className="inline-block">#1</span>{" "}
                                         <span className="inline-block">AI</span>{" "}
                                         <span className="inline-block">assistant</span>
@@ -60,7 +67,7 @@ export default function HeroSection() {
                             {/* Mobile Button */}
                             <button
                                 type="button"
-                                className="purple-gradient-button rounded-[10px] flex items-center gap-[6px] w-fit text-white font-medium text-[16px] tracking-[-0.13px] p-[10px_20px] relative overflow-hidden sm:hidden"
+                                className="purple-gradient-button rounded-[10px] flex items-center gap-1.5 w-fit text-white font-medium text-[16px] tracking-[-0.13px] p-[10px_20px] relative overflow-hidden sm:hidden"
                             >
                                 <span
                                     className="absolute top-0 left-0 z-20 h-full w-full blur-[1px]"
@@ -86,7 +93,7 @@ export default function HeroSection() {
                             {/* Desktop Button */}
                             <a
                                 href="https://downloads.cluely.com/downloads/cluely-setup.exe"
-                                className="purple-gradient-button rounded-[10px] items-center gap-[6px] w-fit text-white font-medium text-[16px] tracking-[-0.13px] p-[10px_20px] relative hidden overflow-hidden sm:flex"
+                                className="purple-gradient-button rounded-[10px] items-center gap-1.5 w-fit text-white font-medium text-[16px] tracking-[-0.13px] p-[10px_20px] relative hidden overflow-hidden sm:flex"
                             >
                                 <span
                                     className="absolute top-0 left-0 z-20 h-full w-full blur-[1px]"
@@ -115,27 +122,46 @@ export default function HeroSection() {
             </div>
 
             {/* Background Demo Section */}
-            <div className="relative hiddden h-fit w-full items-start justify-center px-12 perspective-midrange md: flex">
-                <div className="relative h-12s8 w-full max-w-6xl rounded-[13px] lg:aspect-[1.7] lg: h-auto">
+            <div className="relative hiddden h-fit w-full items-start justify-center sm:px-12 perspective-midrange md: flex">
+                <div className="relative w-full max-w-6xl rounded-[13px] lg:aspect-[1.7] lg: h-auto">
                     <Image
                         alt="Demo Blur"
                         src="/images/wallpaper@2x.b7df867c.png"
                         fill
                         quality={10}
-                        className="absolute inset-0 hidden aspect-[1.7] w-full max-w-6xl rounded-[13px] object-cover object-center blur-xl lg:block"
+                        className="absolute inset-0 hidden aspect-[1.7] w-full max-w-6xl rounded-[13px] object-cover object-center blur-xl md:block"
                     />
                     <Image
                         alt="Demo"
                         src="/images/wallpaper@2x.b7df867c.png"
                         fill
                         quality={100}
-                        className="relative hidden aspect-[1.7] w-full max-w-6xl rounded-[13px] object-cover object-center lg:block"
+                        className="relative hidden aspect-[1.7] w-full max-w-6xl rounded-[13px] object-cover object-center md:block"
                     />
                     <div className="absolute inset-0 flex items-center justify-center rounded-[13px] perspective-midrange lg:overflow-hidden">
                         {/* Top overlay */}
                         <div className="absolute top-0 right-0 left-0 hidden h-fit w-full items-center justify-between bg-black/10 px-3 pt-2 pb-1 text-white lg:flex" />
                     </div>
 
+                    <div className="relative w-full mt-8 h-[600px] rounded-[13px] overflow-hidden">
+                        <video
+                            className="absolute sm:block hidden inset-0 w-full h-full object-contain"
+                            autoPlay
+                            muted
+                            playsInline
+                        >
+                            <source className="" src="/videos/pro-res-vp9-chrome.webm" type="video/webm" />
+                           
+                        </video>
+                         <video
+                            className="absolute sm:hidden block inset-0 w-full object-contain"
+                            autoPlay
+                            muted
+                            playsInline
+                        >
+                            <source className="" src="/videos/roy-vp9-chrome.webm" type="video/webm" />
+                        </video>
+                    </div>
                     {/* Bottom Dock */}
                     <div className="absolute right-0 bottom-2 left-0 hidden items-center justify-center lg:flex">
                         <div className="flex items-center gap-0.5 rounded-xl border border-white/10 bg-white/10 px-1 pt-1 pb-1 backdrop-blur-lg perspective-midrange">
@@ -161,21 +187,10 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    <div className="relative w-full max-sw-5xl h-[700px] rounded-[13px] overflow-hidden">
-                        <video
-                            className="absolute inset-0 w-full h-full object-cover"
-                            autoPlay
-                            muted
-                            playsInline
-                        >
-                            <source className="sm:hidden" src="/videos/pro-res-vp9-chrome.webm" type="video/webm" />
-                            {/* <source className="hidden sm:block" src="/videos/roy-vp9-chrome.webm" type="video/webm" /> */}
-                        </video>
-                    </div>
 
 
                     {/* Center Button */}
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 max-md:hidden flex items-center justify-center">
                         <div className="relative size-fit">
                             <div id="what-do-i-say-next">
                                 <a
@@ -211,7 +226,7 @@ export default function HeroSection() {
                                     </span>
 
                                     {/* Button label */}
-                                    <span className="relative z-10 flex items-center gap-1.5 text-[14px] leading-none -tracking-[0.02em] lg:text-base">
+                                    <span className="purple-gradient-button p-3 relative rounded-2xl flex items-center gap-1.5 text-[14px] leading-none -tracking-[0.02em] lg:text-base">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="16"
@@ -232,15 +247,15 @@ export default function HeroSection() {
                             </div>
 
                             {/* Cursor */}
-                            <div id="cursor" className="absolute right-6 -bottom-12 origin-top-left">
+                            {/* <div id="cursor" className="absolute right-6 -bottom-12 origin-top-left">
                                 <img src="/images/cursor.svg" alt="Cursor" width="65" height="71" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
                     {/* Chat window */}
-                    <div className="absolute inset-0 flex items-start justify-center pt-2 lg:pt-12">
-                        <div className="flex aspect-[1.4] w-[60%] origin-top flex-col items-center justify-between overflow-hidden rounded-2xl bg-gradient-to-b from-[#21232a]/50 to-[#21232a]/80 p-5 backdrop-blur-xs lg:w-[50%]">
+                    <div className="absolute hidden md:flex inset-0 items-start justify-center pt-2 lg:pt-12">
+                        <div className="flex aspect-[1.4] w-[60%] origin-top flex-col items-center justify-between overflow-hidden rounded-2xl bg-linear-to-b from-[#21232a]/50 to-[#21232a]/80 p-5 backdrop-blur-xs lg:w-[50%]">
                             <div className="flex h-fit w-full flex-col gap-2">
                                 <div className="flex w-full justify-end">
                                     <div className="purple-gradient-button primary-fill relative origin-top-right overflow-hidden rounded-2xl rounded-br-md px-3 py-1 text-base text-[#CBE3FF] lg:text-lg">

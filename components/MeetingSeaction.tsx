@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function MeetingsSection() {
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-11 py-12 select-none md:py-24 lg:py-48">
-      <h2 className="inline-block w-fit bg-linear-to-r from-[#19191D] to-[#626275] bg-clip-text px-8 text-4xl leading-[1.25] font-medium tracking-[-1.28px] text-transparent lg:text-6xl">
+      <h2 className="inline-block w-fit bg-linear-to-r from-[#19191D] to-[#626275] bg-clip-text px-8 text-4xl leading-tight font-medium tracking-[-1.28px] text-transparent lg:text-6xl">
         Four ways we make your <br className="hidden lg:block" /> meetings better
       </h2>
 

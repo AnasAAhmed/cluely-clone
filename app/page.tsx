@@ -2,8 +2,8 @@ import Faqs from "@/components/Faqs";
 import HeroSection from "@/components/Hero";
 import MeetingsSection from "@/components/MeetingSeaction";
 import MeetingSteps from "@/components/MeetingSteps";
+import NoBotsSection from "@/components/NoBotsSection";
 import RealTimeTranscription from "@/components/RealTimeSection";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
    <HeroSection/>
    <MeetingsSection/>
    <MeetingSteps/>
+   <NoBotsSection/>
    <RealTimeTranscription/>
    <Faqs/>
    </>
