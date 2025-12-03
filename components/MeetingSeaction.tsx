@@ -1,13 +1,20 @@
 
 import Image from "next/image";
+import SplitText from "./ui/split-text";
 
 export default function MeetingsSection() {
   return (
     <div className="mx-auto flex w-full max-w-7xl flex-col gap-11 py-12 select-none md:py-24 lg:py-48">
-      <h2 className="inline-block w-fit bg-linear-to-r from-[#19191D] to-[#626275] bg-clip-text px-8 text-4xl leading-tight font-medium tracking-[-1.28px] text-transparent lg:text-6xl">
+      {/* <h2 className="inline-block w-fit bg-linear-to-r from-[#19191D] to-[#626275] bg-clip-text px-8 text-4xl leading-tight font-medium tracking-[-1.28px] text-transparent lg:text-6xl">
         Four ways we make your <br className="hidden lg:block" /> meetings better
-      </h2>
-
+      </h2> */}
+      <SplitText
+        text="Four ways we make your meetings better"
+        mode="words"
+        className="px-8 text-4xl  max-w-2xl leading-tight bg-linear-to-r from-[#19191D] to-[#626275] bg-clip-text font-medium tracking-[-1.28px] text-trasnsparent lg:text-6xl"
+        delayPerItem={0.03}
+        duration={0.3}
+      />
       <div className="grid w-full snap-x snap-mandatory auto-cols-max grid-flow-col overflow-x-auto p-0 lg:auto-cols-auto lg:grid-flow-row lg:grid-cols-2 lg:gap-8 lg:overflow-visible lg:p-8">
 
         {/* === Card 1 === */}

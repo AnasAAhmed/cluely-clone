@@ -1,17 +1,18 @@
 
 import Image from "next/image";
 import { Laptop } from "lucide-react";
+import { SplitTextSSR } from "./ui/split-text-ssr";
 
 export default function HeroSection() {
     return (
-        <div className="hero-v2 max-md:bg-[radial-gradient(187.39%_86.87%_at_50%_13.13%,#4a8fdd_23.39%,#4a8fdd00_100%)] px-px flex flex-col items-center gap-8 lg:gap-16">
+        <div className="hero-v2 max-md: bg-[radial-gradient(187.39%_86.87%_at_50%_13.13%,#4a8fdd_23.39%,#4a8fdd00_100%)] px-px flex flex-col items-center gap-8 lg:gap-16">
 
             <Image
-                src="/images/background@4x.png"
+                src="/images/background@4x.webp"
                 alt="Hero Background"
                 fill
                 className="object-top max-md:hidden object-cover z-0"
-                priority
+
             />
 
             <div className="relative z-10 w-full">
@@ -20,20 +21,15 @@ export default function HeroSection() {
                         {/* Title + Subtitle */}
                         <div className="flex flex-col items-center gap-4">
                             <div className="flex flex-col items-center gap-4 lg:gap-3">
-                                <h1
-                                    className="text-center text-[56px] leading-[102%] font-medium tracking-[-1px] text-white lg:text-[80px]"
-                                    style={{ fontFamily: "'EB Garamond', 'EB Garamond Fallback'" }}
-                                >
-                                    <span className="block px-2 h-[n57px] overflow-hidden lg:mh-[76px]">
-                                        <span className="inline-block">#1</span>{" "}
-                                        <span className="inline-block">AI</span>{" "}
-                                        <span className="inline-block">assistant</span>
-                                    </span>
-                                    <span className="block h-[70px] overflow-hidden lg:h-[94px]">
-                                        <span className="inline-block">for</span>{" "}
-                                        <span className="inline-block">meetings</span>
-                                    </span>
-                                </h1>
+                            
+                                    <SplitTextSSR
+                                        text="#1 AI assistant for meetings"
+                                        mode="words"
+                                        className="text-center max-w-lg font-serif text-[56px] leading-[102%] font-medium tracking-[-1px] text-white lg:text-[80px]"
+                                        delayPerItem={0.05}
+                                        duration={0.3}
+                                    />
+                                
 
                                 <hr
                                     className="hidden h-px w-96 border-none lg:block"
@@ -43,22 +39,15 @@ export default function HeroSection() {
                                     }}
                                 />
 
-                                <h2
-                                    className="text-center leading-[140%] font-medium tracking-[-0.02em] text-white lg:text-[19px]"
-                                    style={{
-                                        textShadow:
-                                            "rgba(0, 0, 0, 0.01) 0px 40px 24px, rgba(0, 0, 0, 0.01) 0px 18px 18px, rgba(0, 0, 0, 0.01) 0px 4px 10px",
-                                    }}
-                                >
-                                    Takes perfect notes, answers questions{" "}
-                                    <br className="md:hidden" />
-                                    in real-time, and
-                                    <br className="hidden md:block" />
-                                    makes you the most
-                                    <br className="md:hidden" />
-                                    prepared <span className="hidden md:inline">person</span> on
-                                    every call.
-                                </h2>
+                               
+                                <SplitTextSSR
+                                    text="Takes perfect notes, answers questions in real-time, and
+                                     makes you the mostprepared person on every call."
+                                    mode="words"
+                                    className="text-center max-w-lg leading-[140%] font-medium tracking-[-0.02em] text-white lg:text-[19px]"
+                                    delayPerItem={0.03}
+                                    duration={0.3}
+                                />
                             </div>
                         </div>
 
@@ -151,9 +140,9 @@ export default function HeroSection() {
                             playsInline
                         >
                             <source className="" src="/videos/pro-res-vp9-chrome.webm" type="video/webm" />
-                           
+
                         </video>
-                         <video
+                        <video
                             className="absolute sm:hidden block inset-0 w-full object-contain"
                             autoPlay
                             muted
@@ -192,7 +181,7 @@ export default function HeroSection() {
                     {/* Center Button */}
                     <div className="absolute inset-0 max-md:hidden flex items-center justify-center">
                         <div className="relative size-fit">
-                            <div id="what-do-i-say-next">
+                            <div id="what-do-i-say-next" className="hero-img-fadeUp">
                                 <a
                                     href="#"
                                     className="lg:h-11 px-3 md:w-[178px] w-fit h-10 rounded-[6px] relative font-semibold text-white inline-flex items-center justify-center lg:w-[199px] text-base leading-none blue-gradient-button pointer-events-none"
